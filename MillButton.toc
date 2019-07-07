@@ -1,0 +1,42 @@
+## Interface: 80200
+## Title: MillButton
+## Author: flow0284
+## Version: 8.2.0.0
+## Notes: Addon for easy milling
+## Notes-ptBR: Addon para moer facilmente
+## Description: Addon for easy milling
+## Authors: flow0284
+## X-Credits: Aliok, Ro, Black_Mokona
+## LoadManagers: AddonLoader
+## X-LoadOn-Always: delayed
+## OptionalDeps: Ace3
+## DefaultState: Enabled
+## LoadOnDemand: 0
+## SavedVariablesPerCharacter: MillButtonDB, MillButtonSettings, MillButtonMinimap
+
+# Library files
+#@no-lib-strip@
+lib\LibStub\LibStub.lua
+lib\AceLocale-3.0\AceLocale-3.0.xml
+lib\LibDBIcon-1.0\embeds.xml
+lib\AceAddon-3.0\AceAddon-3.0.xml
+lib\AceConsole-3.0\AceConsole-3.0.xml
+lib\AceDB-3.0\AceDB-3.0.xml
+#@end-no-lib-strip@
+
+# Locale files
+locales\locale.enUS.lua
+locales\locale.deDE.lua
+locales\locale.esES.lua
+locales\locale.frFR.lua
+locales\locale.itIT.lua
+locales\locale.ptBR.lua
+locales\locale.ruRU.lua
+
+# Core files
+Options.lua
+herb_db.lua
+MillButton.lua
+minimap.lua
+utf8.lua
+utf8data.lua

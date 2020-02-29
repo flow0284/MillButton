@@ -1,7 +1,7 @@
 ## Interface: 80300
 ## Title: MillButton
 ## Author: flow0284
-## Version: 8.2.0.1
+## Version: 8.3.0.0
 ## Notes: Addon for easy milling
 ## Notes-ptBR: Addon para moer facilmente
 ## Description: Addon for easy milling

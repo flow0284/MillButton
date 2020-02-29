@@ -1,7 +1,7 @@
 local L = LibStub("AceLocale-3.0"):GetLocale("MillButton")
 local mill = CreateFrame("Button","MillButton",UIParent,"SecureActionButtonTemplate")
 mill:SetAttribute("type","macro")
-local _, _, _, _, _, item_herb = GetAuctionItemSubClasses(6) --Simple way to get ingame localized ItemType "Herb" through Auctionshouseframe translation
+local item_herb = GetItemSubClassInfo(LE_ITEM_CLASS_TRADEGOODS, 9) --Simple way to get ingame localized ItemType "Herb" through Auctionshouseframe translation
 msn = 51005
 mill_spell = GetSpellInfo(msn) --SpellID for Milling
 

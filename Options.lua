@@ -6,8 +6,8 @@ MillButton_Dev = {
 
 --[[ Optionstable ]]
 MillButton_DefaultOptions = {
-	extended = false,	--für die Optionale Chatausgabe der übersrpungenen Kräuter (entfällt evtl.)
-	macroID = nil,		--falls man sich entscheiden sollte das generierte macro nicht mehr nutzen zu wollen muss es über die gespeicherte macroID gelöscht werden
+	extended = false,	--fÃ¼r die Optionale Chatausgabe der Ã¼bersrpungenen KrÃ¤uter (entfÃ¤llt evtl.)
+	macroID = nil,		--falls man sich entscheiden sollte das generierte macro nicht mehr nutzen zu wollen muss es Ã¼ber die gespeicherte macroID gelÃ¶scht werden
 };
 
 --[[ Expansiontable ]]
@@ -20,6 +20,7 @@ MillButtonExpansions = {
 	"WoD",
 	"Legion",
 	"BfA",
+	"Shadowlands",
 };
 
 --[[ Expansion Logos ]]
@@ -214,23 +215,23 @@ Options = CreateFrame("Frame", ADDON.."Options", InterfaceOptionsFramePanelConta
 					--wenn noch keine checkboxen vorhanden dann erstmal erstellen
 					if not self.herbCheckboxes or self.herbCheckboxes then
 						self.herbCheckboxes = {}
-						--ankerpunkt für die erste checkbox
+						--ankerpunkt fÃ¼r die erste checkbox
 						local tAnchorPointY = -120
 						local tAnchorPointX  = 30
 						local tAnchorPointCount  = 0
-						--alle kräuter der jeweiligen untertabelle durchgehen und jeweils eine checkbox erstellen
+						--alle krÃ¤uter der jeweiligen untertabelle durchgehen und jeweils eine checkbox erstellen
 						for itemID, optionValue in pairs(MillButton_Herblist[expansion]) do
 							
-							--name des krauts für das label der checkbox holen
+							--name des krauts fÃ¼r das label der checkbox holen
 							local itemName = L[tostring(itemID)]
 							local itemcount = GetItemCount(itemID, true)
-							--checkbox erstellen (siehe helper function unten) und für späteren zugriff referenz auf checkbox-objekt mit itemid vom kraut als index in herbCheckboxes speichern
+							--checkbox erstellen (siehe helper function unten) und fÃ¼r spÃ¤teren zugriff referenz auf checkbox-objekt mit itemid vom kraut als index in herbCheckboxes speichern
 							self.herbCheckboxes[itemID] = Addon:CreateOptionsCheckButton(self, itemName, itemID, itemcount)
 							self.herbCheckboxes[itemID].itemID = itemID
 							table.sort(self.herbCheckboxes[itemID])
 							--passend anordnen
 							self.herbCheckboxes[itemID]:SetPoint("TOPLEFT", self, "TOPLEFT", tAnchorPointX, tAnchorPointY)
-							--ankerpunkt für die nächste checkbox
+							--ankerpunkt fÃ¼r die nÃ¤chste checkbox
 							tAnchorPointY = tAnchorPointY - self.herbCheckboxes[itemID]:GetHeight()
 							tAnchorPointCount = tAnchorPointCount + 1
 							if tAnchorPointCount > 16 then
@@ -240,7 +241,7 @@ Options = CreateFrame("Frame", ADDON.."Options", InterfaceOptionsFramePanelConta
 							end 
 						end
 					end
-					--alle inhalte self.herbCheckboxes durchgehen und den aktuellen wert (checked/nicht checked bzw. true/false) für die checkbox entsprechend der db festlegen
+					--alle inhalte self.herbCheckboxes durchgehen und den aktuellen wert (checked/nicht checked bzw. true/false) fÃ¼r die checkbox entsprechend der db festlegen
 					for itemID, checkboxObj in pairs(self.herbCheckboxes) do
 						
 						--wert der checkbox entsprechend der tabelle festlegen
@@ -257,7 +258,7 @@ Options = CreateFrame("Frame", ADDON.."Options", InterfaceOptionsFramePanelConta
 							checkboxObj:SetChecked(MillButton_Herblist[expansion][itemID])
 						end
 						
-						--bei wertänderung auf true in der db speichern
+						--bei wertÃ¤nderung auf true in der db speichern
 						checkboxObj:SetScript("OnClick", function(self)
 							PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON or SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF)
 							if MillButton_Dev.debug == true then

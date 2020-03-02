@@ -33,6 +33,7 @@ MillButtonExpansionLogos = {
 	[[Interface\Addons\MillButton\gfx\WoD]],
 	[[Interface\Addons\MillButton\gfx\Legion]],
 	[[Interface\Addons\MillButton\gfx\BfA]],
+	[[Interface\Addons\MillButton\gfx\SL]],
 };
 
 --[[ Macronames ]]

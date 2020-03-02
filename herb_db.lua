@@ -93,4 +93,7 @@ MillButton_Herblist = {
 		[152510] = false,	--Anchor Weed
 		[152511] = false,	--Sea Stalk
 	},
+	["Shadowlands"] = {
+		--[] = false,	--tbd
+	},
 };

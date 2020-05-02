@@ -19,12 +19,12 @@ jobs:
       with:
         path: 'MillButton'
     - run: ./MillButton/.github/workflows/get-translations.sh deDE
-    - run: ./MillButton/.github/workflows/get-translations.sh enUS
-    - run: ./MillButton/.github/workflows/get-translations.sh esES
-    - run: ./MillButton/.github/workflows/get-translations.sh frFR
-    - run: ./MillButton/.github/workflows/get-translations.sh itIT
-    - run: ./MillButton/.github/workflows/get-translations.sh ptBR
-    - run: ./MillButton/.github/workflows/get-translations.sh ruRU
+    #- run: ./MillButton/.github/workflows/get-translations.sh enUS
+    #- run: ./MillButton/.github/workflows/get-translations.sh esES
+    #- run: ./MillButton/.github/workflows/get-translations.sh frFR
+    #- run: ./MillButton/.github/workflows/get-translations.sh itIT
+    #- run: ./MillButton/.github/workflows/get-translations.sh ptBR
+    #- run: ./MillButton/.github/workflows/get-translations.sh ruRU
     - name: Delete files for curse
       run: rm -rf MillButton/README.md MillButton/.github/ MillButton/.gitignore
     - name: Generate build number

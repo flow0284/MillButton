@@ -1,6 +1,6 @@
 #!/bin/bash
 function get-translations(){
-    curl -H "X-Api-Token: 48953334-3b8e-4f2c-92d5-801d83282a7d" -X GET -H \
+    curl -H "X-Api-Token: 7a82fbfa-af55-4ec0-ba66-7d9a772fa51b" -X GET -H \
     "Content-type: application/json" \
     >temp.lua \
     "https://wow.curseforge.com/api/projects/31873/localization/export?lang=$1"

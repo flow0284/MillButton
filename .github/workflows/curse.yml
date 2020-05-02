@@ -35,7 +35,7 @@ jobs:
     - name: Update version
       uses: jacobtomlinson/gha-find-replace@master
       with:
-        find: "AUTO_GENERATED_VERSION"
+        find: "AUTOMATIC_VERSIONN"
         replace: "8.3.${{steps.buildnumber.outputs.build_number}}"
     - name: Create zip
       run: zip -r MillButton-8.3.${{steps.buildnumber.outputs.build_number}}.zip ./MillButton 

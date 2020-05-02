@@ -91,6 +91,6 @@ MillButton_Herblist = {
 		[152508] = false,	--Winter's Kiss
 		[152509] = false,	--Siren's Pollen
 		[152510] = false,	--Anchor Weed
-		[152511] = false,	--Sea Stalk
+		[152511] = false,	--Sea Stalk --
 	},
 };

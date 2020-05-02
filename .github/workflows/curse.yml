@@ -33,8 +33,9 @@ jobs:
       with:
         token: ${{secrets.github_token}}  
     - name: Update version
-      uses: jacobtomlinson/gha-find-replace@master
+    - uses: jacobtomlinson/gha-find-replace@master
       with:
+        include: "MillButton.toc"
         find: "AUTO_GENERATED_VERSION"
         replace: "8.3.${{steps.buildnumber.outputs.build_number}}"
     - name: Create zip

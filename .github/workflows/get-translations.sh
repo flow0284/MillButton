@@ -5,9 +5,9 @@ function get-translations(){
     >temp.lua \
     "https://wow.curseforge.com/api/projects/31873/localization/export?lang=$1"
 
-    sed -e '/--.*$/{r temp.lua' -e 'd}' MillButton/locales/locale.$1.lua >temp2.lua
+    sed -e '/--.*$/{r temp.lua' -e 'd}' MillButton/locales/$1.lua >temp2.lua
     awk '{gsub("\\\\\\\\n", "\\n", $0); print}' temp2.lua >temp.lua
-    mv temp.lua MillButton/locales/locale.$1.lua
+    mv temp.lua MillButton/locales/$1.lua
     rm temp2.lua
 }
 get-translations $1

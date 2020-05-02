@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: 'MillButton'
-    - run: ./MillButton/.github/workflows/get-translations.sh deDE
+    #- run: ./MillButton/.github/workflows/get-translations.sh deDE
     #- run: ./MillButton/.github/workflows/get-translations.sh enUS
     #- run: ./MillButton/.github/workflows/get-translations.sh esES
     #- run: ./MillButton/.github/workflows/get-translations.sh frFR

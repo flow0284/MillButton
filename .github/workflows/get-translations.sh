@@ -7,7 +7,7 @@ function get-translations(){
 
     sed -e '/--.*$/{r temp.lua' -e 'd}' MillButton/locales/locale.$1.lua >temp2.lua
     awk '{gsub("\\\\\\\\n", "\\n", $0); print}' temp2.lua >temp.lua
-    mv temp.lua MillButton/Locales/locale.$1.lua
+    mv temp.lua MillButton/locales/locale.$1.lua
     rm temp2.lua
 }
 get-translations $1

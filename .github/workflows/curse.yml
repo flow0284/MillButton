@@ -31,7 +31,7 @@ jobs:
       id: buildnumber
       uses: einaregilsson/build-number@v2 
       with:
-        token: ${{secrets.github_token}}  
+        token: MillButton-8.3.${{secrets.github_token}}  
     - name: Update version
       uses: jacobtomlinson/gha-find-replace@master
       with:

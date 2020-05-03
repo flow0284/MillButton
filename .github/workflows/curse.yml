@@ -37,6 +37,7 @@ jobs:
       with:
         find: "AUTOMATIC_VERSION"
         replace: "8.3.${{steps.buildnumber.outputs.build_number}}"
+        include: "MillButton.toc"
     - name: Create zip
       run: zip -r MillButton-8.3.${{steps.buildnumber.outputs.build_number}}.zip ./MillButton 
     - name: Create Release

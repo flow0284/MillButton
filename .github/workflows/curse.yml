@@ -26,7 +26,7 @@ jobs:
     - run: ./MillButton/.github/workflows/get-translations.sh ptBR
     - run: ./MillButton/.github/workflows/get-translations.sh ruRU
     - name: Delete files for curse
-      run: rm -rf MillButton/README.md MillButton/.github/ MillButton/.gitignore
+      run: rm -rf MillButton/README.md MillButton/.github/ MillButton/.gitignore MillButton/.git
     - name: Generate build number
       id: buildnumber
       uses: einaregilsson/build-number@v2 

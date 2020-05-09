@@ -94,6 +94,6 @@ MillButton_Herblist = {
 		[152511] = false,	--Sea Stalk
 	},
 	--[[["Shadowlands"] = {
-		[tdb] = false,	--tdb
+		[tdb] = false,	-- tdb
 	},]]
 };

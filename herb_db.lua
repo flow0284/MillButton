@@ -94,6 +94,10 @@ MillButton_Herblist = {
 		[152511] = false,	--Sea Stalk
 	},
 	["Shadowlands"] = {
-		--[] = false,	--tbd
+		[168586] = false,	--Rising Glory
+		[168583] = false,	--Widowbloom
+		[168589] = false,	--Marrowroot
+		[171315] = false,	--Nightshade
+		[169701] = false,	--Death Blossom
 	},
 };

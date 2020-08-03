@@ -33,7 +33,7 @@ MillButtonExpansionLogos = {
 	[[Interface\Addons\MillButton\gfx\WoD]],
 	[[Interface\Addons\MillButton\gfx\Legion]],
 	[[Interface\Addons\MillButton\gfx\BfA]],
-	[[Interface\Addons\MillButton\gfx\SL]],
+	[[Interface\Addons\MillButton\gfx\Shadowlands]],
 };
 
 --[[ Macronames ]]
@@ -83,7 +83,7 @@ Options = CreateFrame("Frame", ADDON.."Options", InterfaceOptionsFramePanelConta
 			Notes:SetJustifyV("TOP")
 			Notes:SetText("Version: "..GetAddOnMetadata(ADDON, "Version"))
 			
-			local OptionPanel = CreateFrame("Frame", nil, Options)
+			local OptionPanel = CreateFrame("Frame", nil, Options, BackdropTemplateMixin and "BackdropTemplate")
 			OptionPanel:SetPoint("TOPLEFT", Notes, "BOTTOMLEFT", 0, -24)
 			OptionPanel:SetPoint("BOTTOMRIGHT", Options, -16, 16)
 			OptionPanel:SetBackdrop({
@@ -196,7 +196,7 @@ Options = CreateFrame("Frame", ADDON.."Options", InterfaceOptionsFramePanelConta
 				texframe.texture:SetAllPoints(texframe)
 				texframe.texture:SetTexture(MillButtonExpansionLogos[i],1)
 				
-				local SubOptionPanel = CreateFrame("Frame", nil, Options_Child)
+				local SubOptionPanel = CreateFrame("Frame", nil, Options_Child, BackdropTemplateMixin and "BackdropTemplate")
 				SubOptionPanel:SetPoint("TOPLEFT", texframe, "BOTTOMLEFT", 0, 0)
 				SubOptionPanel:SetPoint("BOTTOMRIGHT", Options_Child, -16, 16)
 				SubOptionPanel:SetBackdrop({

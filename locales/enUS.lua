@@ -1,4 +1,9 @@
 ﻿local L = LibStub("AceLocale-3.0"):NewLocale("MillButton", "enUS", true)
+L["168586"] = "Rising Glory"
+L["168583"] = "Widowbloom"
+L["168589"] = "Marrowroot"
+L["171315"] = "Nightshade"
+L["169701"] = "Death Blossom"
 L["168487"] = "Zin'anthid"
 L["152511"] = "Sea Stalk"
 L["152509"] = "Siren's Pollen"

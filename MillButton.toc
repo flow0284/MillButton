@@ -1,7 +1,7 @@
 ## Interface: 80300
 ## Title: MillButton
 ## Author: flow0284
-## Version: 9.0.0.1a
+## Version: AUTOMATIC_VERSION
 ## Notes: Addon for easy milling
 ## Notes-ptBR: Addon para moer facilmente
 ## Description: Addon for easy milling
@@ -25,13 +25,13 @@ lib\AceDB-3.0\AceDB-3.0.xml
 #@end-no-lib-strip@
 
 # Locale files
-locales\locale.enUS.lua
-locales\locale.deDE.lua
-locales\locale.esES.lua
-locales\locale.frFR.lua
-locales\locale.itIT.lua
-locales\locale.ptBR.lua
-locales\locale.ruRU.lua
+locales\enUS.lua
+locales\deDE.lua
+locales\esES.lua
+locales\frFR.lua
+locales\itIT.lua
+locales\ptBR.lua
+locales\ruRU.lua
 
 # Core files
 Options.lua

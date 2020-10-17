@@ -1,0 +1,62 @@
+#https://wow.curseforge.com/api/projects/31873/package?token=48953334-3b8e-4f2c-92d5-801d83282a7d
+name: Curse Build
+
+on:
+  push:
+    branches:
+    - master
+
+    paths-ignore:
+    - ".github/workflows/curse.yml"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        path: 'MillButton'
+    - run: ./MillButton/.github/workflows/get-translations.sh deDE
+    #- run: ./MillButton/.github/workflows/get-translations.sh enUS
+    - run: ./MillButton/.github/workflows/get-translations.sh esES
+    - run: ./MillButton/.github/workflows/get-translations.sh frFR
+    - run: ./MillButton/.github/workflows/get-translations.sh itIT
+    - run: ./MillButton/.github/workflows/get-translations.sh ptBR
+    - run: ./MillButton/.github/workflows/get-translations.sh ruRU
+    - name: Delete files for curse
+      run: rm -rf MillButton/README.md MillButton/.github/ MillButton/.gitignore MillButton/.git
+    - name: Generate build number
+      id: buildnumber
+      uses: einaregilsson/build-number@v2 
+      with:
+        token: ${{secrets.github_token}}  
+    - name: Update version
+      uses: jacobtomlinson/gha-find-replace@master
+      with:
+        find: "AUTOMATIC_VERSION"
+        replace: "8.3.${{steps.buildnumber.outputs.build_number}}"
+        include: "MillButton.toc"
+    - name: Create zip
+      run: zip -r MillButton-8.3.${{steps.buildnumber.outputs.build_number}}.zip ./MillButton 
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      with:
+        tag_name: "MillButton-8.3.${{ steps.buildnumber.outputs.build_number }}"
+        release_name: Release MillButton-8.3.${{ steps.buildnumber.outputs.build_number }}
+        draft: false
+        prerelease: false
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./MillButton-8.3.${{steps.buildnumber.outputs.build_number}}.zip
+        asset_name: MillButton-8.3.${{steps.buildnumber.outputs.build_number}}.zip
+        asset_content_type: application/zip

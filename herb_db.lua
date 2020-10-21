@@ -100,5 +100,6 @@ MillButton_Herblist = {
 		[168589] = false,	--Marrowroot
 		[171315] = false,	--Nightshade
 		[169701] = false,	--Death Blossom
+		[170554] = false,	--Vigil's Torch
 	},
 };
